@@ -18,9 +18,14 @@
         <span class="title" md-line>comp2</span>
         <span md-line class="secondary">test</span>
       </a>
+      <a md-list-item class="sidenav-link" [routerLink]="['/notfound']" (click)="sidenav.toggle()">
+        <md-icon md-list-icon>android</md-icon>
+        <span class="title" md-line>not found</span>
+        <span md-line class="secondary">error page</span>
+      </a>
     </md-nav-list>
   </md-sidenav>
-  <md-toolbar id="appToolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}" color="primary">
+  <md-toolbar id="appToolbar" color="primary">
     <button md-icon-button (click)="sidenav.toggle()" class="md-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
             <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
     </button>

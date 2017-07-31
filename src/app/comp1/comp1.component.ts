@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { MetaService } from '../meta.service';
 
 @Component({
   selector: 'app-comp1',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp1Component implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title, private metaService: MetaService) { }
 
   ngOnInit() {
+    this.title.setTitle('component 1');
+    this.metaService.setMeta('description', 'test component 1');
   }
 
 }
