@@ -18,6 +18,7 @@ export class MetaService {
     if (!metaTag) {
       metaTag = this.document.createElement('meta');
       metaTag.setAttribute('name', name);
+      document.getElementsByTagName('HEAD')[0].appendChild(metaTag);
     }
 
     metaTag.setAttribute('content', value);
